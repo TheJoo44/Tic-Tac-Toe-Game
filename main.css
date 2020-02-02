@@ -1,3 +1,115 @@
-body {
-    background-color: red;
+html, body {
+    background-color: rgb(68, 71, 238);
+    font-family: Arial, Helvetica, sans-serif;
+    border: none;
+}
+
+header {
+    height: 100%;
+    text-align: center;
+    background-color: rgb(206, 155, 74);
+    font-size: 5vh; 
+}
+
+:root {
+    --null: white;
+    --playerX: red;
+    --playerO: green;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.board-container {
+    height: 100%;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.game-board {
+    width: 478px;
+}
+
+.squares {
+    height: 150px;
+    width: 150px;
+}
+
+/* .squares:hover {
+    background-color: antiquewhite;
+} */
+
+#instructions {
+    margin-top: 50px;
+    text-align: center;
+    font-size: 3vh;
+}
+
+.game-message {
+    text-align: center;
+    text-decoration: underline;
+    margin-top: 20px;
+    color: darkorange;
+}
+
+.row1{
+    border-bottom: 3px solid #FFD97D;
+}
+
+.row2{
+    border-bottom: 1.5px solid #FFD97D;
+    border-top: 1.5px solid #FFD97D;
+}
+
+.row3{
+    border-top: 3px solid #FFD97D;
+}
+
+.col1 {
+    border-right: 3px solid #FFD97D;
+}
+
+.col2 {
+    border-right: 1.5px solid #FFD97D;
+    border-left: 1.5px solid #FFD97D;
+}
+
+.col3 {
+    border-left: 3px solid #FFD97D;
+}
+
+.replay {
+    text-align: center;
+    justify-content: center;
+    margin: auto;
+    height: 60px;
+    width: 160px;
+}
+
+
+
+
+
+
+
+
+footer{
+    text-align: right;
+    font-size: 15px;
+    height: 5vh;
+    width: 100%;
 }

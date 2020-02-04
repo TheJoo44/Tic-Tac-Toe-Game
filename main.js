@@ -1,41 +1,58 @@
 /*----- constants -----*/
 
-const colors = {
+var colors = {
   null: 'var(--null)',
   playerX: 'var(--player1)',
   playerO: 'var:(--playerO)',
 };
 
-const winCombo = {
-  win1: [0, 1, 2],
-  win2: [3, 4, 5],
-  win3: [6, 7, 8],
-  win4: [0, 3, 6],
-  win5: [1, 4, 7],
-  win6: [2, 5, 8],
-  win7: [0, 4, 8],
-  win8: [2, 4, 6],
-}
+var winCombo = [
+  [0, 1, 2],
+  [3, 4, 5],
+  [6, 7, 8],
+  [0, 3, 6],
+  [1, 4, 7],
+  [2, 5, 8],
+  [0, 4, 8],
+  [2, 4, 6],
+]
 
 /*----- app's state (variables) -----*/
 
-const board = [];
+let board = [];
 let playerTurn;
 let winDrawPlay;
-
+let playerX = 1;
+let playerO = -1;
 
 /*----- cached element references -----*/
-const squaresEls = document.querySelectorAll('.squares');
+var squaresEls = document.querySelectorAll('.squares');
+var message = document.querySelectorAll('h1');
+let gameEl = document.querySelector('.game-board');
 
 /*----- event listeners -----*/
+
+function getWinner() {
+  for (let i = 0; i < winCombo; i++) {
+    // if (Math.abs(board[winCombo[i][0]] + enter 2 more board win conditions))
+  }
+}
+
+  gameEl.addEventListener('click', function(e) {
+  console.log(e.target);
+  e.target.innerText = playerTurn;
+  // Add turn switch here
+})
+
+
 
 /*----- functions -----*/
 init()
 
 function init() {
   gameBoard();
-  turn();
-  winner();
+  turn = 1;
+  winner = null;
   render();
 }
 
@@ -48,7 +65,10 @@ function gameBoard() {
 
 function turn() {
   if (playerTurn === playerX) {
-    return playerX; 
+    return playerO;
+  } else {
+    return playerX
+  }
 }
 
 function winner() {
@@ -56,11 +76,16 @@ function winner() {
 }
 
 function render() {
+  board.forEach(function(sq, idx) {
+    squaresEls[idx].style.background = colors[sq]
+  });
   if (winner === null) {
-    message = (`It is ${playerTurn}/'s turn`)
+    message.innerHTML = (`It is ${playerTurn}/'s turn`)
   } else if (winner === 'T') {
-    message = (`It/'s A Tie`)
+    message.innerHTML = (`It/'s A Tie`)
   } else {
-    message = (`Congrats ${playerTurn}! You Win!!`)
+    message.innerHTML = (`Congrats ${playerTurn}! You Win!!`)
   }
 }
+
+// winner = -1

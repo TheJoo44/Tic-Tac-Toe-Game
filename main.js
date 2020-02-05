@@ -31,61 +31,60 @@ var message = document.querySelectorAll('h1');
 let gameEl = document.querySelector('.game-board');
 
 /*----- event listeners -----*/
+gameEl.addEventListener('click', turn) 
 
-function getWinner() {
-  for (let i = 0; i < winCombo; i++) {
-    // if (Math.abs(board[winCombo[i][0]] + enter 2 more board win conditions))
-  }
-}
-
-  gameEl.addEventListener('click', function(e) {
-  console.log(e.target);
-  e.target.innerText = playerTurn;
-  // Add turn switch here
-})
-
+document.querySelector('button').addEventListener('click', init)
 
 
 /*----- functions -----*/
 init()
 
 function init() {
+  board = Array(9).fill(null)
+  console.log(board);
   gameBoard();
-  turn = 1;
-  winner = null;
+  playerTurn = playerX;
+  winDrawPlay = null;
   render();
+}
+
+function getWinner() {
+  for (let i = 0; i < winCombo; i++) {
+    if (Math.abs(board[winCombo[i][0]] + board[winCombo[i][1]] + board[winCombo[i][2]]) === 3){
+      return board[winCombo[i][0]]
+    } 
+  } 
+  if (board.includes(null)) {
+    return null
+  } 
+    return 'T'
 }
 
 function gameBoard() {
   for (i = 0; i < squaresEls.length; i++) {
-    board[i] = squaresEls[i];
+    squaresEls[i] = board[i];
   }
   console.log(board)
 }
 
-function turn() {
-  if (playerTurn === playerX) {
-    return playerO;
-  } else {
-    return playerX
-  }
-}
-
-function winner() {
-  return null;
+function turn(e) {
+  e.target.innerText = playerTurn;
+  if (board[e.target.innerText] !== null) return;
+  if (winDrawPlay !== null) return;
+  winDrawPlay = getWinner();
+  playerTurn *= -1;
+  render();
 }
 
 function render() {
   board.forEach(function(sq, idx) {
     squaresEls[idx].style.background = colors[sq]
   });
-  if (winner === null) {
+  if (winDrawPlay === null) {
     message.innerHTML = (`It is ${playerTurn}/'s turn`)
-  } else if (winner === 'T') {
+  } else if (winDrawPlay === 'T') {
     message.innerHTML = (`It/'s A Tie`)
   } else {
     message.innerHTML = (`Congrats ${playerTurn}! You Win!!`)
   }
 }
-
-// winner = -1

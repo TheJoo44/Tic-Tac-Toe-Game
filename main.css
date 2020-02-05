@@ -12,7 +12,7 @@ header {
 }
 
 :root {
-    --null: white;
+    --null: rgb(68, 71, 238);
     --playerX: red;
     --playerO: green;
 }

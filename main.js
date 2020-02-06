@@ -24,8 +24,8 @@ let board = [];
 let playerTurn;
 let winDrawPlay;
 // how do I link the colors to this? Freezes browser if not 1 & -1
-let playerX = '1';
-let playerO = '-1';
+let playerX = 1;
+let playerO = -1;
 // let clickedBox = [];
 
 /*----- cached element references -----*/
@@ -96,7 +96,6 @@ function turn(e) {
   }
   console.log('playerTurn', playerTurn)
   winDrawPlay = getWinner();
-  // playerTurn *= -1;
   render();
 }
 
@@ -112,4 +111,5 @@ function render() {
   } else {
     message.innerHTML = (`Congrats ${-playerTurn}! You Win!!`)
   }
+  // message.innerHTML = (`Good Luck!!`)
 }

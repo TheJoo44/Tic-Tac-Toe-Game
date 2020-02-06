@@ -1,5 +1,5 @@
 html, body {
-    background-color: rgb(68, 71, 238);
+    background-color: rgb(9, 10, 90);
     font-family: Arial, Helvetica, sans-serif;
     border: none;
 }
@@ -12,9 +12,9 @@ header {
 }
 
 :root {
-    --null: rgb(68, 71, 238);
-    --playerX: red;
-    --playerO: green;
+    --null: rgb(9, 10, 90);
+    --playerX: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOEAAADhCAMAAAAJbSJIAAAAQlBMVEUAAAD////Z2dlVVVWpqanh4eH39/ewsLA7OzvS0tJLS0utra2SkpLc3Nxra2vr6+uEhISampocHBzBwcFWVlZbW1sAvzP0AAABe0lEQVR4nO3cSWpDQRBEQcvzPPv+V/XeC3V9ZFDmJ94JKnYJDX1xIUmSJEmSJEmSJEmSJEn/2uPT9bGez33f6d0cjvZy7vtO7vU48HB57gNP7m3vwvcFsF94u3fhxwpYL1wC24V3exd+roHlwq+9C+8HwG7hw96FVxNgtXAxufuFq8ndL1xN7nrhcnLXC5eTu124ntztwimwVjiY3N3CyeTuFk4md7VwNLmrhaPJ3Sz83gDsFM4md7FwOLmLhcPJ3SucTu5e4XRy1wrHk7tWuBHYJ5xP7lLhhsldKtwwuTuFWyZ3p3DL5K4U/mwHlgm37bVG4Z9GDxeE0RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5ERLmR0iYHyFhfoSE+RES5kdImB8hYX6EhPkREuZHSJgfIWF+hIT5EfYLR19D35z7SkmSJEmSJEmSJEmSJEmq6Rf1vBlgtssoZAAAAABJRU5ErkJggg==');
+    --playerO: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMgAAADFCAMAAAAmGE1yAAAAS1BMVEX///8AAAD8/Pz6+vr39/cEBATv7+8ICAgPDw/09PTy8vITExPn5+cZGRnExMTd3d22trZTU1PX19e7u7t6enpmZmYeHh6srKyjo6NLr5tTAAACbklEQVR4nO3b607jMBCGYXsc20lb2l3Y0/1f6c44WbRVk/wABJ7ofQRRWxXJH57JOSEAAAAAAAAAAAAAAAAAAAAAwGIIISX9FXulP9LeetSGLUEkTC1M+8hhlkHCRZfzdFgi/SCdlkS+FB11Ctccx5hjjWOOOZ++elBvYi1yjWdNkWNTo86MO0XrabrVGrPOhsUYdWbKV4/qTTSHVlPNOh9WXerJY7NrFX1baqraIlsWB6Ulr2snXSR7Xb7PJfXKgvTPisaGb0l0KzjZdNT45C9I2/LpwoJoWT23cVeHMxLmFVJqTfBi7a11dY7ZXxDbjFttDeXHEsBa3V+QoXX55VnLqWqCMVenpZWszX/+inX8f+C5ugvSOr22Dq/zVDidkSbuIsjnI0hvCNIbgvRouF3j/T6WzyC2Eyzy+wAzIpPuPZ6q+yCDnYmbwh/3QSZbSHpxHyRcwqBhbv6DtOoqa2tiX0FEUjtWdB/kH4L0hiC9IUhvCPLR7GS0yN3b+xd2JUe2rzd3EyQUCacwrYxnMRbZydFREP13l52D17ENSjavm3cTRA8q7DL5OeeVo9b2oSSZtv++oyDWA8NOaemXdq7/dxPEyl+P9WrOD3PSPsq1nIKLHpFJJ6WsnQ1ZhmVf2r61pJsgMt8Hsx0kpnkVvIEgH+4opXWYZj/M6vcwG8TD7KIcZqfxOLvx70SQ3hCkNwTpDUF6Q5DeEKQ3BOkNQXrzmKPmWPt/DubBSgyfD4vlxV2Y6PAxxMcGsVvmHT71ttrs1eEzrg8p7IlEjz2yMiNxPO+cmvRkvpULAAAAAAAAAAAAAAAAAAAAAAAcyl+zSRFO6fl2/wAAAABJRU5ErkJggg==');
 }
 
 .flex-container {
@@ -42,6 +42,7 @@ header {
 
 .game-board {
     width: 478px;
+    margin: 0 0 0 20px;
 }
 
 .squares {
@@ -57,6 +58,7 @@ header {
     margin-top: 50px;
     text-align: center;
     font-size: 3vh;
+    color: rgb(206, 155, 74)
 }
 
 .game-message {
@@ -100,16 +102,9 @@ header {
     width: 160px;
 }
 
-
-
-
-
-
-
-
-footer{
+/* footer{
     text-align: right;
     font-size: 15px;
     height: 5vh;
     width: 100%;
-}
+} */

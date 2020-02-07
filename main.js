@@ -6,6 +6,8 @@ var colors = {
   '-1': 'var(--playerO)',
 };
 
+let isGoing = true;
+
 // Winning combinations
 var winCombo = [
   [0, 1, 2],
@@ -68,7 +70,7 @@ function getWinner() {
     return null
   } 
   // if all squares are taken and no winner, the game is tied
-    return 'T'
+  return 'T'
 }
 
 // 
@@ -80,13 +82,7 @@ function gameBoard() {
 }
 
 function turn(e) {
-  // e.target.innerText = playerTurn;
-  // clickedBox.push(e.target.id) 
-  // if (clickedBox.includes(e.target.id)) {
-  //   return;
-  // }
-  // console.log(clickedBox)
-  // doesn't end when there is a winner & allows boxes to be clicked multiple times
+  if (isGoing === false) return;
   if (playerTurn === playerX) {
     board[parseInt(e.target.id)] = 1
     playerTurn = playerO
@@ -96,6 +92,7 @@ function turn(e) {
   }
   console.log('playerTurn', playerTurn)
   winDrawPlay = getWinner();
+
   render();
 }
 
@@ -108,8 +105,11 @@ function render() {
     message.innerHTML = (`It is ${playerTurn}'s turn`)
   } else if (winDrawPlay === 'T') {
     message.innerHTML = (`It's A Tie`)
+    return isGoing = false
   } else {
     message.innerHTML = (`Congrats ${-playerTurn}! You Win!!`)
+    return isGoing = false 
   }
+  isGoing = true
   // message.innerHTML = (`Good Luck!!`)
 }
